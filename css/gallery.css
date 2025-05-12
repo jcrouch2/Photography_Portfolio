@@ -18,25 +18,26 @@ p {
 }
 
 .gallery-container {
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
+  margin: 30px auto;
   display: block;
-  max-width: 1500px;  
-  margin: 0 auto;    
+  max-width: 90%;  
+  padding: 0;   
 }
 
 .gallery-item {
   width: 32%; 
   margin-bottom: 10px;
-  justify-content: space-around;
 }
 
 .gallery-item img {
-  width: 100%; 
+  width: 100%;
   height: auto;
   display: block;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px #00000033;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
 }

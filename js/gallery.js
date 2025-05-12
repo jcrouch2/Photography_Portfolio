@@ -14,29 +14,27 @@ document.querySelectorAll('.gallery-container').forEach((galleryContainer) => {
 
     const img = document.createElement('img');
     img.src = `${folderPath}${filename}`;
-    img.loading = 'lazy';
+    // img.loading = 'lazy';
 
     link.appendChild(img);
     galleryContainer.appendChild(link);
   }
 
-  window.addEventListener('load', function () {
-    imagesLoaded(galleryContainer, function () {
-      new Masonry(galleryContainer, {
-        itemSelector: '.gallery-item',
-        columnWidth: '.gallery-item',
-        percentPosition: true,
-        gutter: 10,
-      });
+  imagesLoaded(galleryContainer, function () {
+    new Masonry(galleryContainer, {
+      itemSelector: '.gallery-item',
+      columnWidth: '.gallery-item',
+      percentPosition: true,
+      gutter: 25,
+    });
 
-      lightGallery(galleryContainer, {
-        selector: '.gallery-item',
-        download: false,
-        thumbnail: true,
-        zoom: true,
-        autoplay: true,
-        fullScreen: true,
-      });
+    lightGallery(galleryContainer, {
+      selector: '.gallery-item',
+      download: false,
+      thumbnail: true,
+      zoom: true,
+      autoplay: true,
+      fullScreen: true,
     });
   });
 });
