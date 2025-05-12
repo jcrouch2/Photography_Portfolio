@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flora Gallery</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flora Gallery</title>
 	<link rel="stylesheet" href="css\navbar.css">
 	<link rel="stylesheet" href="css/gallery.css">
 
@@ -23,11 +23,11 @@
 
 	<!-- imagesLoaded (helps Masonry work properly with images) -->
 	<script defer src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-	<script defer src="js/flora-gallery.js"></script>
+	<script defer src="js/gallery.js"></script>
 </head>
 
 <body>
-  <!-- navbar -->
+	<!-- navbar -->
 	<header>
 		<nav class="navbar">
 			<div class="navbar-logo">
@@ -41,19 +41,25 @@
 					<li><a href="collections.html">Collections</a></li>
 					<li><a href="about.html">Behind the Camera</a></li>
 					<li><a href="https://www.instagram.com/f5.6811?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-							target="_blank"><img id="ig-icon" src="assets/icons/ig.png" aria-label="Instagram profile" alt="Instagram logo"></a></li>
+							target="_blank"><img id="ig-icon" src="assets/icons/ig.png" aria-label="Instagram profile"
+								alt="Instagram logo"></a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 
-  <div id="description">
-    <h1>Flora Collection</h1>
-    <p>Look at the flowers which decorate the plants on the ground. Come down to their
-      level, and look at the intricate delicateness which King Solomon coveted.</p>
-  </div>
+	<div id="description">
+		<h1>Flora Collection</h1>
+		<p>Look at the flowers which decorate the plants on the ground. Come down to their
+			level, and look at the intricate delicateness which King Solomon coveted.</p>
+	</div>
 
-  <div class="gallery-container"></div>
+	<div class="gallery-container" 
+		data-folder="flora" 
+		data-base="flora" 
+		data-count="27">
+	</div>
+
 
 </body>
 
