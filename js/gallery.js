@@ -1,22 +1,42 @@
-console.log("gallery.js is working!");
+document.querySelectorAll('.gallery-container').forEach((galleryContainer) => {
+  const folder = galleryContainer.dataset.folder;
+  const base = galleryContainer.dataset.base;
+  const count = parseInt(galleryContainer.dataset.count);
 
-window.addEventListener('load', function () {
-  const gallery = document.querySelector('#gallery');
+  const folderPath = `assets/optimized/${folder}/`;
 
-  const msnry = new Masonry(gallery, {
-    itemSelector: '.gallery-item',
-    columnWidth: '.gallery-item',
-    percentPosition: true,
-    gutter: 10,
-  });
+  for (let i = 1; i <= count; i++) {
+    const filename = `${base}${i}.jpg`;
 
-  lightGallery(document.getElementById('gallery'), {
-    selector: '.gallery-item',
-    download: false,
-    thumbnail: true,
-    zoom: true,
-    autoplay: true,
-    fullScreen: true,
+    const link = document.createElement('a');
+    link.href = `${folderPath}${filename}`;
+    link.className = 'gallery-item';
+
+    const img = document.createElement('img');
+    img.src = `${folderPath}${filename}`;
+    img.loading = 'lazy';
+
+    link.appendChild(img);
+    galleryContainer.appendChild(link);
+  }
+
+  window.addEventListener('load', function () {
+    imagesLoaded(galleryContainer, function () {
+      new Masonry(galleryContainer, {
+        itemSelector: '.gallery-item',
+        columnWidth: '.gallery-item',
+        percentPosition: true,
+        gutter: 10,
+      });
+
+      lightGallery(galleryContainer, {
+        selector: '.gallery-item',
+        download: false,
+        thumbnail: true,
+        zoom: true,
+        autoplay: true,
+        fullScreen: true,
+      });
+    });
   });
 });
-
