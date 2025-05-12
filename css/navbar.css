@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  outline: 1px solid red; 
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f7f4f3;
+}
+
+header {
+  height: 90px;
+}
+
+/* Navigation bar */
+.navbar {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  font-family: 'Libre Baskerville', serif;
+  box-shadow: 0 4px 6px rgb(170, 167, 162);
+  overflow: visible;
+
+  /* Sticky navbar */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 5px 18px;
+}
+
+#ig-icon {
+  height: 45px;
+  width: auto;
+  display: block;
+  margin: 0;
+}
+
+.navbar-right {
+  margin-right: 30px;
+}
+
+.navbar-right ul {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-right li {
+  font-size: 20px;
+  font-weight: bold;
+  transition: text-decoration 1s ease;
+}
+
+.navbar-right li:hover {
+  color: #322c27;
+  text-decoration: underline;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+/* Fonts */
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
