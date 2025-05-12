@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery Collections</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css\navbar.css">
+  <link rel="stylesheet" href="css/collections.css">
 
- 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +16,12 @@
 </head>
 
 <body>
-  <!-- Navigation bar -->
+  <!-- navbar -->
   <header>
     <nav class="navbar">
       <div class="navbar-logo">
         <a href="index.html" class="nav-logo">
-          <img src="assets/logos/blk-logo.png" alt="My Logo">
+          <img src="assets/logos/blk-logo.png" alt="Photographer's signature">
         </a>
       </div>
 
@@ -30,17 +30,42 @@
           <li><a href="collections.html">Collections</a></li>
           <li><a href="about.html">Behind the Camera</a></li>
           <li><a href="https://www.instagram.com/f5.6811?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank"><img id="ig-icon" src="assets/icons/ig.png" alt="Instagram logo"></a></li>
+              target="_blank"><img id="ig-icon" src="assets/icons/ig.png" aria-label="Instagram profile"
+                alt="Instagram logo"></a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <p>These are my gallery collections</p>
-  <a href="flora-gallery.html">Floral Gallery</a>
-  <a href="abstract-gallery.html">Abstract Gallery</a>
-  <a href="moody-gallery.html">Moody Gallery</a>
+  <main>
 
+    <h1>Photography Collections</h1>
+
+    <div class="collection-covers">
+      <div class="bw">
+        <a href="mono-gallery.html">
+          <img src="assets/optimized/collections/bw-cover.jpg" id="bw"
+            alt="Black and white photo of palm trees by water">
+        </a>
+        <h2><a href="mono-gallery.html">Black and White Gallery</a></h2>
+      </div>
+
+      <div class="flora">
+        <a href="flora-gallery.html">
+          <img src="assets/optimized/collections/flora-cover.jpg" alt="White lily">
+        </a>
+        <h2><a href="flora-gallery.html">Flora Gallery</a></h2>
+      </div>
+
+      <div class="abstract">
+        <a href="abstract-gallery.html">
+          <img src="assets/optimized/collections/abstract-cover.jpg" alt="The top of a pineapple crown">
+        </a>
+        <h2><a href="abstract-gallery.html">Abstract Gallery</a></h2>
+      </div>
+    </div>
+
+  </main>
 
 </body>
 
