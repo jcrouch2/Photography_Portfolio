@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photography Portfolio | Home</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
 
   <!-- Swiper CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <link rel="stylesheet" href="css/main.css">
-  <script defer src="js/main.js"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +18,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
 
+  <script defer src="js/home.js"></script>
 </head>
 
 <body>
-
-  <!-- Navigation bar -->
+  <!-- navbar -->
   <header>
     <nav class="navbar">
-
       <div class="navbar-logo">
         <a href="index.html" class="nav-logo">
-          <img src="assets/logos/blk-logo.png" alt="My Logo">
+          <img src="assets/logos/blk-logo.png" alt="Photographer's signature">
         </a>
       </div>
 
@@ -38,44 +36,36 @@
           <li><a href="collections.html">Collections</a></li>
           <li><a href="about.html">Behind the Camera</a></li>
           <li><a href="https://www.instagram.com/f5.6811?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank"><img id="ig-icon" src="assets/icons/ig.png" alt="Instagram logo"></a></li>
+              target="_blank"><img id="ig-icon" src="assets/icons/ig.png" aria-label="Instagram profile"
+                alt="Instagram logo"></a></li>
         </ul>
       </div>
-
     </nav>
   </header>
 
   <main>
+    <div class="container">
 
-    <!-- Center logo maybe? -->
-    <!-- <div id="center-logo">
-      <img src="assets/logos/blk-logo.png" alt="My logo">
-    </div> -->
-
-    <!-- Slider main container -->
-    <div class="swiper">
-
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide"><img src="assets/homepage_carousel/bw_birds_crop.jpg"
-            alt="Black and white photograph with birds flying"></div>
-        <div class="swiper-slide"><img src="assets/homepage_carousel/big_tree.jpg" alt="Large, windy koa tree">
-        </div>
-        <div class="swiper-slide"><img src="assets/homepage_carousel/bw_flowers.jpg"
-            alt="Black and white photograph of flowers"></div>
-        ...
+      <!-- Center content -->
+      <div id="center-logo">
+        <img src="assets/logos/blk-logo.png" alt="My logo">
+        <h1 class="welcome">E komo mai</h1>
       </div>
-      <!-- pagination -->
-      <div class="swiper-pagination"></div>
 
-      <!-- navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- javascript will add slide images in this container -->
+        </div>
 
+        <!-- pagination and navigation buttons -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
+      </div>
     </div>
-
   </main>
 
 </body>
