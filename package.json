@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "lightgallery": "^2.8.3",
-    "masonry-layout": "^4.2.2",
-    "swiper": "^11.2.6"
-  }
-}
