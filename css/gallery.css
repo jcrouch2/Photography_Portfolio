@@ -21,7 +21,8 @@ p {
   margin: 30px auto;
   display: block;
   max-width: 90%;  
-  padding: 0;   
+  padding: 0;  
+  visibility: hidden; 
 }
 
 .gallery-item {
@@ -37,16 +38,39 @@ p {
   box-shadow: 0 2px 5px #00000033;
   transition: transform 0.3s ease;
 
+  visibility: hidden; 
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.3s ease;
+}
+
+/* Once the image is loaded, reveal it */
+.gallery-item img.loaded {
+  visibility: visible;
+  opacity: 1;
 }
 
 .gallery-item img:hover {
   transform: scale(1.02);
 }
 
-.gallery-item img.loaded {
-  opacity: 1;
-  transform: translateY(0);
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 55px;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle closest-side, #b0b0b0 90%, transparent) no-repeat 0 0,
+    radial-gradient(circle closest-side, #b0b0b0 90%, transparent) no-repeat 0 100%,
+    radial-gradient(circle closest-side, #b0b0b0 90%, transparent) no-repeat 100% 100%;
+  background-size: 40% 40%;
+  animation: l11 1s infinite linear;
+}
+@keyframes l11 {
+    25% {background-position:100% 0   ,0 100%,100% 100%}
+    50% {background-position:100% 0   ,0 0   ,100% 100%}
+    75% {background-position:100% 0   ,0 0   ,0    100%}
+    100%{background-position:100% 100%,0 0   ,0    100%}
 }

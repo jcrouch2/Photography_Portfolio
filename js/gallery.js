@@ -1,39 +1,46 @@
-document.querySelectorAll('.gallery-container').forEach((galleryContainer) => {
-  const folder = galleryContainer.dataset.folder;
-  const base = galleryContainer.dataset.base;
-  const imgCount = parseInt(galleryContainer.dataset.count);
+const galleryContainer = document.querySelector('.gallery-container');
+const folder = galleryContainer.dataset.folder;
+const base = galleryContainer.dataset.base;
+const imgCount = parseInt(galleryContainer.dataset.count);
+const folderPath = `assets/optimized/${folder}/`;
 
-  const folderPath = `assets/optimized/${folder}/`;
+//nice loader while you wait (from css-loaders.com)
+const loader = document.createElement('div');
+loader.className = 'loader';
+document.body.appendChild(loader); //position it outside the gallery container so its not hidden
+console.log("Loading...");
 
-  for (let i = 1; i <= imgCount; i++) {
-    const filename = `${base}${i}.jpg`;
+galleryContainer.style.visibility = 'hidden';  //hide the gallery while images are loading
 
-    const link = document.createElement('a');
-    link.href = `${folderPath}${filename}`;
-    link.className = 'gallery-item';
+for (let i = 1; i <= imgCount; i++) {
+  const filename = `${base}${i}.jpg`;
+  const link = document.createElement('a');
+  link.href = `${folderPath}${filename}`;
+  link.className = 'gallery-item';
 
-    const img = document.createElement('img');
-    img.src = `${folderPath}${filename}`;
-    img.loading = 'lazy';
+  const img = document.createElement('img');
+  img.src = `${folderPath}${filename}`;
+  img.loading = 'lazy';
 
-    link.appendChild(img);
-    galleryContainer.appendChild(link);
-  }
+  img.addEventListener('load', () => {
+    img.classList.add('loaded');
+  });
 
-  const msnry = new Masonry(galleryContainer, {
+  link.appendChild(img);
+  galleryContainer.appendChild(link);
+}
+
+imagesLoaded(galleryContainer).on('always', function () {
+  galleryContainer.style.visibility = 'visible';
+
+  loader.remove();
+  console.log("Finished loading.");
+
+  const masonry = new Masonry(galleryContainer, {
     itemSelector: '.gallery-item',
     columnWidth: '.gallery-item',
     percentPosition: true,
     gutter: 25,
-  });
-
-  //try to reduce loading time by starting masonry layout after each image loads (instead of after all images load)
-  imagesLoaded(galleryContainer)
-  .on('progress', function (_instance, image) {
-    if (image.isLoaded) {
-      image.img.classList.add('loaded');
-    }
-    msnry.layout(); 
   });
 
   lightGallery(galleryContainer, {
