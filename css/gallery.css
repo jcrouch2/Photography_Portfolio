@@ -36,11 +36,10 @@ p {
   display: block;
   border-radius: 10px;
   box-shadow: 0 2px 5px #00000033;
-  transition: transform 0.3s ease;
 
   visibility: hidden; 
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Once the image is loaded, reveal it */
