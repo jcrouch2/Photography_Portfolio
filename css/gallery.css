@@ -36,8 +36,17 @@ p {
   border-radius: 10px;
   box-shadow: 0 2px 5px #00000033;
   transition: transform 0.3s ease;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .gallery-item img:hover {
   transform: scale(1.02);
+}
+
+.gallery-item img.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
