@@ -1,7 +1,7 @@
-const count = 8; //images
+const imgCount = 8;
 const wrapper = document.querySelector('.swiper-wrapper');
 
-for (let i = 1; i <= count; i++) {
+for (let i = 1; i <= imgCount; i++) {
   const slide = document.createElement('div');
   slide.classList.add('swiper-slide');
 
